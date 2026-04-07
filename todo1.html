@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+                body{
+                        background-color: rosybrown;
+                        text-align: center;
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                }
+                .box{
+                        background-color: goldenrod;
+                        padding: 30px;
+                        margin: 10px auto;
+                        width: 600px;
+                        border-radius: 100px;
+                        border-color: black;
+                }
+                .card{
+                        background-color:white;
+                        padding: 20px;
+                        margin: 20px;
+                        border-radius: 20px;
+                        box-sizing: content-box;
+                        border-style: double;
+                        box-decoration-break: slice;}
+                button{
+                        background-color: white;
+                        color:black;
+                        padding: 10px;
+                        border: hotpink;
+                        border-radius: 50px
+                        size="70px";     
+
+        }
+            </style>
+</head>
+<body>
+    <div class="box">
+    <h1> My To-Do App </h1>
+    </div>
+    <br>
+    <div class="card">   
+    <input type="text" id="task" placeholder="enter your task" size="50px"  style="font-size: medium;">
+    </div>
+    <button onclick="addTask()">Add Task</button>
+    <p id="output"></p>
+    <script>
+        function addTask(){
+            let task=document.getElementById("task").value;
+            document.getElementById("output").innerHTML+=task+"<br>";
+        }
+    </script>
+    
+</body>
+</html>
