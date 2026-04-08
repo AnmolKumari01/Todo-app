@@ -4,17 +4,19 @@
     <title>Document</title>
     <style>
                 body{
-                        background-color: rosybrown;
-                        text-align: center;
-                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                }
-                .box{
-                        background-color: goldenrod;
-                        padding: 30px;
-                        margin: 10px auto;
-                        width: 600px;
-                        border-radius: 100px;
+                     background-color: rosybrown;
+                    text-align: center;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                 }
+                 .box{
+                        background-color: pink;
+                        padding: 10px;
+                        margin: 20px;
+                        width: 1250px;
+                        border-radius: 20px;
                         border-color: black;
+                        box-decoration-break:slice;
+                        border-style: dotted;
                 }
                 .card{
                         background-color:white;
@@ -27,12 +29,22 @@
                 button{
                         background-color: white;
                         color:black;
-                        padding: 10px;
-                        border: hotpink;
-                        border-radius: 50px
-                        size="70px";     
+                        padding: 10px; 
+                        border-radius: 10px;
+                        margin-left: 10px;
+                                }
+                li{
+                    display: flexbox;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 5px 0;
+                    margin-left: 10px;
+                    background: peru;
+                    padding: 8px;
+                    border-radius: 5px;
 
-        }
+                     }
+                     
             </style>
 </head>
 <body>
@@ -41,14 +53,28 @@
     </div>
     <br>
     <div class="card">   
-    <input type="text" id="task" placeholder="enter your task" size="50px"  style="font-size: medium;">
-    </div>
+    <input  id="task" placeholder="enter your task" size="50px"  style="font-size: medium;" onkeypress="handleKey(event)">
     <button onclick="addTask()">Add Task</button>
+    <ul id="list"></ul>
+    </div>
     <p id="output"></p>
     <script>
         function addTask(){
             let task=document.getElementById("task").value;
-            document.getElementById("output").innerHTML+=task+"<br>";
+            if(task==="") return;
+            let li=document.createElement("li");
+            li.content=task;
+            list.innerHTML+="<li onclick='toggleDone(this)'>" +task+"<button onclick='removeTask(this)'>   X   </button></li>";
+            document.getElementById("task").value="";
+        }
+        function removeTask(element){
+            element.parentElement.remove();
+        }
+       
+        function handleKey(event){
+            if(event.key==="Enter"){
+                addTask();
+            }
         }
     </script>
     
