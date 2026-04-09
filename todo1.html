@@ -16,7 +16,7 @@
                         border-radius: 20px;
                         border-color: black;
                         box-decoration-break:slice;
-                        border-style: dotted;
+                        border-style:groove;
                 }
                 .card{
                         background-color:white;
@@ -44,9 +44,13 @@
                     border-radius: 5px;
 
                      }
-                     
+                     .done{
+                        text-decoration:wavy;
+                        color: blue; 
+
+                     }
             </style>
-</head>
+</head> 
 <body>
     <div class="box">
     <h1> My To-Do App </h1>
@@ -76,7 +80,10 @@
                 addTask();
             }
         }
+        function toggleDone(el){
+            el.classList.toggle("done");
+        }
     </script>
     
 </body>
-</html>
+</html> 
